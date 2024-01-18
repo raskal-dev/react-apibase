@@ -29,7 +29,7 @@ function Login() {
         AuthServices.login(data)
         .then(res => {
             localStorage.setItem('token', res.data.data);
-            navigate('/userlist');
+            navigate('/home');
         }) 
         .catch(err => {
             console.log(err);

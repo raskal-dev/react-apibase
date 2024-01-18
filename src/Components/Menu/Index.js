@@ -22,19 +22,19 @@ const Menu = () => {
         <div class="area"></div><nav class="main-menu">
             <ul>
                 <li>
-                    <a href="https://jbfarrow.com">
+                    <a href="#" onClick={() => { navigate('/home') }}>
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
-                           Community Dashboard
+                           Dashboard
                         </span>
                     </a>
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
-                        <i class="fa fa-globe fa-2x"></i>
+                    <a href="#" onClick={() => { navigate('/userlist') }}>
+                        <i class="fa fa-user fa-2x"></i>
                         <span class="nav-text">
-                            Global Surveyors
+                            User
                         </span>
                     </a>
                     
