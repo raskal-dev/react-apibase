@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AuthServices from '../../Services/Auth.services';
 import { useNavigate } from 'react-router-dom';
+import Menu from '../../Components/Menu/Index';
 
 function User() {
 
@@ -33,6 +34,7 @@ function User() {
     }
   return (
     <div>
+        <Menu/>
         {users.length  > 0 && users.map(user => (
             <div key={user.id}>
                 <p>{user.id}</p>
@@ -40,8 +42,7 @@ function User() {
                 <p>{user.email}</p>
             </div>
         ))}
-
-        <button type='button' onClick={handleLogout}>Log Out</button>
+        
     </div>
   )
 }

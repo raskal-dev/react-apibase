@@ -1,6 +1,22 @@
 import React from 'react'
+import '../../assets/Css/menu.css';
+import AuthServices from '../../Services/Auth.services';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = () => {
+    let navigate = useNavigate();
+
+    const handleLogout = () => {
+        AuthServices.logout()
+        .then(res => {
+            localStorage.removeItem('token');
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
   return (
     <>
         <div class="area"></div><nav class="main-menu">
@@ -85,7 +101,7 @@ const Menu = () => {
 
             <ul class="logout">
                 <li>
-                   <a href="#">
+                   <a href="#" onClick={handleLogout}>
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
                             Logout
