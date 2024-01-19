@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../assets/Css/login.css';
 import AuthServices from '../../Services/Auth.services.js';
 import { useNavigate } from 'react-router-dom';
+import $ from 'jquery';
 
 function Login() {
 
@@ -18,6 +19,15 @@ function Login() {
             .map((letter, index) => `<span style="transition-delay:${index * 40}ms">${letter}</span>`)
             .join('')
         })
+
+        $('.btn').on('click', function() {
+            var $this = $(this);
+          $this.button('loading');
+            setTimeout(function() {
+               $this.button('reset');
+           }, 8000);
+        });
+        
     }, [])
 
     const onSubmit = (e) => {
@@ -47,7 +57,7 @@ function Login() {
                 <input type="password" required name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <label>Password</label>
             </div>
-            <button type='submit' className="btn">Login</button>
+            <button type='submit' className="btn" id="load2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order">Login</button>
             <p className="text">Don't have an account? <a href="#">Register</a></p>
         </form>
     </div>
