@@ -20,13 +20,13 @@ function Login() {
             .join('')
         })
 
-        $('.btn').on('click', function() {
-            var $this = $(this);
-          $this.button('loading');
-            setTimeout(function() {
-               $this.button('reset');
-           }, 8000);
-        });
+        // $('.btn').on('click', function() {
+        //     var $this = $(this);
+        //   $this.button('loading');
+        //     setTimeout(function() {
+        //        $this.button('reset');
+        //    }, 8000);
+        // });
         
     }, [])
 
@@ -57,7 +57,7 @@ function Login() {
                 <input type="password" required name="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 <label>Password</label>
             </div>
-            <button type='submit' className="btn" id="load2" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order">Login</button>
+            <button type='submit' className="btn">Login</button>
             <p className="text">Don't have an account? <a href="#">Register</a></p>
         </form>
     </div>
